@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "375895258875",
+    "project_id": "cd2-20223155-nguyentridung",
+    "storage_bucket": "cd2-20223155-nguyentridung.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375895258875:android:efce47bc9a1bd4193fa25e",
+        "android_client_info": {
+          "package_name": "com.example.chuyende2_20223155_nguyentridung"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_IIqf3wHWKwpJudlhlpEm41LHZwxIi3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
