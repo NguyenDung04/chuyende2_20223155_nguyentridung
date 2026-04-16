@@ -1,4 +1,10 @@
-# 📱 Chuyên đề 2 - Flutter + Firebase (MVC)
+# News App Flutter
+
+Ứng dụng quản lý tin tức cá nhân được xây dựng bằng Flutter theo yêu cầu bài thi thực hành giữa kỳ môn Chuyên đề tốt nghiệp 2.
+
+## Thông tin đề tài
+
+Chủ đề: Xây dựng ứng dụng quản lý tin tức cá nhân (News App)
 
 ## 👨‍🎓 Thông tin sinh viên
 
@@ -6,212 +12,53 @@
 * Mã sinh viên: **20223155**
 * Số điện thoại: **0378519357**
 
----
+## Chức năng chính
 
-## 🚀 Giới thiệu dự án
+- Đăng ký tài khoản
+- Đăng nhập tài khoản
+- Hiển thị danh sách tin tức từ API
+- Hiển thị ảnh, tiêu đề, mô tả và ngày đăng
+- Tìm kiếm bài viết theo tiêu đề
+- Xem chi tiết bài viết
+- Thêm hoặc xóa bài viết yêu thích
+- Lưu danh sách yêu thích riêng theo từng tài khoản
+- Pull to refresh để cập nhật dữ liệu
+- Xử lý lỗi API và mất kết nối
+- Hiển thị loading khi đang tải dữ liệu
 
-Đây là ứng dụng Flutter được xây dựng theo mô hình **MVC (Model - View - Controller)**, kết hợp với **Firebase Cloud Firestore** để thực hiện các thao tác **CRUD (Create, Read, Update, Delete)**.
+## Công nghệ sử dụng
 
-Ứng dụng bao gồm:
+- Flutter
+- Dart
+- Provider
+- HTTP
+- SharedPreferences
 
-* Trang Welcome (giao diện giới thiệu)
-* Trang About (thông tin sinh viên)
-* Trang trống
-* Trang CRUD (quản lý ghi chú)
-* Menu ngang điều hướng
+## Kiến trúc project
 
----
+Project được tổ chức theo hướng tách lớp rõ ràng:
 
-## 🧱 Công nghệ sử dụng
+- `models`: chứa model dữ liệu
+- `services`: xử lý gọi API và lưu local
+- `repositories`: trung gian lấy dữ liệu
+- `providers`: quản lý trạng thái
+- `screens`: giao diện màn hình
+- `widgets`: các widget tái sử dụng
+- `core`: exception, utils, helper
 
-* Flutter (Dart)
-* Firebase
-* Cloud Firestore
-* MVC Architecture
+## Cấu trúc thư mục
 
----
-
-## 📂 Cấu trúc thư mục
-
-```
+```text
 lib/
-├── main.dart
-├── firebase_options.dart
-├── app/
+├── core/
+│   ├── exceptions/
+│   ├── services/
+│   └── utils/
 ├── models/
-├── views/
-├── controllers/
+├── providers/
+├── repositories/
+├── screens/
+│   ├── auth/
 ├── services/
-└── widgets/
-```
-
-### Giải thích:
-
-* `models/`: định nghĩa dữ liệu
-* `views/`: giao diện người dùng
-* `controllers/`: xử lý logic
-* `services/`: kết nối Firebase
-* `widgets/`: component tái sử dụng
-
----
-
-## ⚙️ Cài đặt & chạy dự án
-
-### 1. Clone project
-
-```bash
-git clone <link-repo>
-cd chuyende2_20223155_nguyentridung
-```
-
-### 2. Cài package
-
-```bash
-flutter pub get
-```
-
----
-
-## 🔥 Kết nối Firebase
-
-### Bước 1: Tạo project Firebase
-
-* Truy cập: https://console.firebase.google.com
-* Tạo project mới
-
----
-
-### Bước 2: Cài Firebase CLI
-
-```bash
-npm install -g firebase-tools
-firebase login
-```
-
----
-
-### Bước 3: Cài FlutterFire CLI
-
-```bash
-dart pub global activate flutterfire_cli
-```
-
----
-
-### Bước 4: Kết nối Firebase với Flutter
-
-```bash
-flutterfire configure
-```
-
-👉 Lệnh này sẽ:
-
-* Tạo file `firebase_options.dart`
-* Kết nối app với Firebase
-
----
-
-### Bước 5: Thêm dependencies
-
-```bash
-flutter pub add firebase_core
-flutter pub add cloud_firestore
-```
-
----
-
-## ▶️ Chạy ứng dụng
-
-```bash
-flutter run
-```
-
----
-
-## 📌 Chức năng chính
-
-### 1. Navigation (Menu ngang)
-
-* Chuyển giữa các trang:
-
-  * Welcome
-  * About
-  * Trang trống
-  * CRUD
-
----
-
-### 2. Firebase CRUD (Firestore)
-
-Collection: `notes`
-
-#### ➕ Thêm dữ liệu
-
-* Nhập tiêu đề + nội dung
-* Lưu vào Firestore
-
-#### 📖 Xem dữ liệu
-
-* Hiển thị danh sách realtime
-
-#### ✏️ Sửa dữ liệu
-
-* Cập nhật nội dung ghi chú
-
-#### ❌ Xóa dữ liệu
-
-* Xóa trực tiếp trên Firestore
-
----
-
-## 🔄 Luồng hoạt động (MVC)
-
-```
-View → Controller → Service → Firebase
-```
-
----
-
-## 🎨 UI/UX
-
-* Thiết kế hiện đại
-* Bo góc mềm mại
-* Shadow nhẹ
-* Gradient màu
-* Menu ngang đẹp
-* Responsive
-
----
-
-## 📸 Demo (tuỳ chọn thêm ảnh)
-
-> Thêm ảnh màn hình tại đây nếu cần
-
----
-
-## ❗ Lưu ý
-
-* Cần bật Firestore trong Firebase Console
-* Chạy `flutterfire configure` trước khi run
-* Đảm bảo thiết bị/emulator hoạt động
-
----
-
-## 📚 Tài liệu tham khảo
-
-* https://firebase.google.com/docs/flutter/setup
-* https://flutter.dev
-* https://firebase.google.com/docs/firestore
-
----
-
-## ✅ Kết luận
-
-Ứng dụng đã:
-
-* Áp dụng thành công mô hình MVC
-* Kết nối Firebase thành công
-* Thực hiện CRUD dữ liệu realtime
-* Thiết kế UI/UX thân thiện, hiện đại
-
----
+├── widgets/
+└── main.dart
